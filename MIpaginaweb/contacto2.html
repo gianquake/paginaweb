@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario de contacto detallado e interacción institucional de Gianpierre Tezen.">
+    <title>Contacto Detallado | Gianpierre Tezen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-viewport">
+        
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="profile-avatar"><i class="fa-solid fa-envelope-open-text"></i></div>
+                <h1 class="profile-name">Gianpierre Tezen</h1>
+                <p class="profile-role">Estudiante de ATI</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+                <a href="sobre.html"><i class="fa-solid fa-address-card"></i> Sobre mí</a>
+                <a href="proyectos.html"><i class="fa-solid fa-laptop-code"></i> Proyectos</a>
+                <a href="galeria.html"><i class="fa-solid fa-images"></i> Galería</a>
+                <a href="contacto.html" class="active"><i class="fa-solid fa-envelope"></i> Contacto</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                &copy; 2026 Gianpierre Tezen
+            </div>
+        </aside>
+
+        <main class="content-area">
+            
+            <section class="section-card">
+                <h2>Formulario Detallado de Contacto</h2>
+                <p class="subtitulo">Si requieres especificar fechas, categorías o adjuntar archivos, completa el siguiente formulario estructurado:</p>
+
+                <!-- CONTENEDOR PARA EL MENSAJE DE ÉXITO O ERROR -->
+                <div id="mensajeEstado" style="margin-bottom: 20px; display: none;"></div>
+
+                <form id="formDetallado" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="access_key" value="021f3ccd-b52b-4cdf-b159-edd0750fe135">
+                    <input type="hidden" name="subject" value="Nuevo mensaje detallado de Gianpierre Tezen">
+
+                    <fieldset>
+                        <legend><i class="fa-solid fa-user"></i> Datos Personales</legend>
+
+                        <div class="form-group">
+                            <label for="nombre" class="required">Nombre Completo:</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required pattern="[A-Za-zÁéíóúÁÉÍÓÚñÑ\s]{3,50}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="required">Correo Electrónico Institucional:</label>
+                            <input type="email" id="email" name="email" placeholder="ati61302477@istrfa.edu.pe" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">Teléfono de Contacto:</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="987654321" pattern="[0-9]{9}">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fecha">Fecha Tentativa de Reunión:</label>
+                            <input type="date" id="fecha" name="fecha_contacto" min="2026-01-01" max="2026-12-31">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend><i class="fa-solid fa-list-check"></i> Detalle del Requerimiento</legend>
+
+                        <div class="form-group">
+                            <label for="categoria">Categoría de Consulta:</label>
+                            <select id="categoria" name="categoria">
+                                <optgroup label="Académico">
+                                    <option value="proyecto">Consulta de Proyecto ATI</option>
+                                    <option value="estudio">Colaboración Académica</option>
+                                </optgroup>
+                                <optgroup label="Desarrollo">
+                                    <option value="web">Páginas Web HTML/CSS</option>
+                                    <option value="python">Programación en Python</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="interes">Área de Interés (Sugerencias):</label>
+                            <input type="text" id="interes" name="area_interes" list="intereses-list" placeholder="Escribe o selecciona...">
+                            <datalist id="intereses-list">
+                                <option value="Desarrollo de páginas web usando HTML y CSS">
+                                <option value="Programación de scripts en Python">
+                                <option value="Proyectos Académicos ATI">
+                                <option value="Arquitectura de Hardware">
+                            </datalist>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Preferencia de Respuesta:</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="preferencia" value="correo" checked> Correo Electrónico</label>
+                                <label><input type="radio" name="preferencia" value="telefono"> Teléfono / WhatsApp</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="archivo">Adjuntar Documento (Opcional):</label>
+                            <input type="file" id="archivo" name="archivo_adjunto">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje" class="required">Mensaje Extenso:</label>
+                            <textarea id="mensaje" name="mensaje" rows="6" placeholder="Escribe aquí el detalle de tu consulta..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="terminos" required> Acepto el tratamiento de datos para respuesta institucional.</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn" style="width: 100%; justify-content: center;"><i class="fa-solid fa-paper-plane"></i> Enviar Formulario Detallado</button>
+                </form>
+
+                <div class="btn-group">
+                    <a href="contacto.html" class="btn btn-secondary"><i class="fa-solid fa-bolt"></i> Volver a Formulario Rápido</a>
+                    <a href="index.html" class="btn btn-secondary"><i class="fa-solid fa-house"></i> Volver al Inicio</a>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- SCRIPT PARA ENVÍO EN SEGUNDO PLANO SIN REDIRECCIÓN -->
+    <script>
+        const form = document.getElementById('formDetallado');
+        const mensajeEstado = document.getElementById('mensajeEstado');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            mensajeEstado.style.display = 'block';
+            mensajeEstado.innerHTML = "<p style='color: var(--color-secondary); font-weight: bold;'>Enviando formulario...</p>";
+
+            const formData = new FormData(form);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status === 200) {
+                    mensajeEstado.innerHTML = "<p style='color: #15803D; font-weight: bold; background: #DCFCE7; padding: 14px; border-radius: 12px; border: 1px solid #86EFAC;'><i class='fa-solid fa-circle-check'></i> ¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.</p>";
+                    form.reset();
+                } else {
+                    mensajeEstado.innerHTML = `<p style='color: #B45309; background: #FEF3C7; padding: 14px; border-radius: 12px;'><i class='fa-solid fa-triangle-exclamation'></i> ${json.message}</p>`;
+                }
+            })
+            .catch(error => {
+                mensajeEstado.innerHTML = "<p style='color: #EF4444; background: #FEE2E2; padding: 14px; border-radius: 12px;'><i class='fa-solid fa-circle-xmark'></i> Ocurrió un error al enviar el mensaje. Intenta nuevamente.</p>";
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galería collage fotográfico personal de Gianpierre Tezen.">
+  <title>Galería | Gianpierre Tezen</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* COLLAGE DINÁMICO DE 6 FOTOS */
+    .fila {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 16px;
+      width: 100%;
+    }
+
+    .fila img {
+      height: 100%;
+      width: 0;
+      min-width: 0;
+      object-fit: cover;
+      border: 3px solid var(--color-primary);
+      border-radius: var(--radius-lg);
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .fila img:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: var(--color-secondary);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .fila-1 { height: 280px; }
+    .fila-1 .img1 { flex: 1.2; }
+    .fila-1 .img2 { flex: 1.8; }
+
+    .fila-2 { height: 230px; }
+    .fila-2 .img3 { flex: 1.5; }
+    .fila-2 .img4 { flex: 0.9; }
+    .fila-2 .img5 { flex: 1.1; }
+
+    .fila-3 { height: 360px; }
+    .fila-3 .img6 { flex: 1; }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 600px) {
+      .fila {
+        flex-direction: column;
+        height: auto !important;
+        gap: 12px;
+      }
+      .fila img {
+        width: 100% !important;
+        height: 220px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-viewport">
+    
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="profile-avatar"><i class="fa-solid fa-images"></i></div>
+        <h1 class="profile-name">Gianpierre Tezen</h1>
+        <p class="profile-role">Estudiante de ATI</p>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+        <a href="sobre.html"><i class="fa-solid fa-address-card"></i> Sobre mí</a>
+        <a href="proyectos.html"><i class="fa-solid fa-laptop-code"></i> Proyectos</a>
+        <a href="galeria.html" class="active"><i class="fa-solid fa-images"></i> Galería</a>
+        <a href="contacto.html"><i class="fa-solid fa-envelope"></i> Contacto</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        &copy; 2026 Gianpierre Tezen
+      </div>
+    </aside>
+
+    <main class="content-area">
+      
+      <section class="section-card">
+        <h2>GALERÍA PERSONAL</h2>
+        <p class="subtitulo">Un vistazo visual a mis momentos, pasatiempos y recuerdos personales.</p>
+
+        <!-- FILA 1 -->
+        <div class="fila fila-1">
+          <img src="imagenes/foto3.jpg" alt="Guitarras y cuarto" class="img1">
+          <img src="imagenes/foto5.jpg" alt="Selfie en espejo" class="img2">
+        </div>
+
+        <!-- FILA 2 -->
+        <div class="fila fila-2">
+          <img src="imagenes/foto4.jpg" alt="Gatito" class="img3">
+          <img src="imagenes/foto1.jpg" alt="Peluche" class="img4">
+          <img src="imagenes/foto2.jpg" alt="Perrito" class="img5">
+        </div>
+
+        <!-- FILA 3 -->
+        <div class="fila fila-3">
+          <img src="imagenes/foto6.jpg" alt="Outfit y mochila" class="img6">
+        </div>
+
+        <div class="btn-container">
+          <a href="index.html" class="btn"><i class="fa-solid fa-house"></i> Volver al inicio</a>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- REPRODUCTOR DE AUDIO AMBIENTAL -->
+  <audio id="musica" autoplay loop>
+    <source src="canciones/Less-than-a-Lover.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    window.addEventListener("load", function() {
+      const musica = document.getElementById("musica");
+      musica.play().catch(function() {
+        console.log("El navegador bloqueó el autoplay.");
+      });
+    });
+  </script>
+
+</body>
+</html>
